@@ -1,0 +1,121 @@
+html, body {
+  background-color: #FFFBEF;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#div--search_bar {
+  margin: auto;
+}
+
+#input--search_quiz {
+  left: 22px; top: 20px;
+  width: 730px;
+  margin: 20px 10px 20px 200px;
+  font-size: 20px;
+  border-radius: 20px;
+  padding: 5px 18px;
+
+  background-image: url(../../img/icon-search.png);
+  background-size: 10px;
+  background-repeat: no-repeat;
+  background-position: 8px;
+  padding-left: 26px;
+}
+
+#btn--search {
+  background-color:  #a4492b ;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  font-weight : bold;
+  font-size: 18px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block
+}
+
+#btn--search:active {
+  background-color: grey;
+  box-shadow: 2px 2px 5px grey;
+}
+
+h2 {
+  position: relative;
+  left: 300px;
+  font-size: 40px;
+}
+
+#div--categories {
+  margin: 10px 100px;
+  width: 64%;
+}
+
+img {
+  width: 200px;
+}
+
+#img--chemistry {
+  width: 150px;
+}
+
+.td--category {
+  padding: 40px 100px;
+  border: 1px solid transparent;
+  align-items: center;
+}
+
+.td--category:hover {
+  background-color: gold;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.td--category:active {
+  background-color: lightgoldenrodyellow;
+  border: 1px solid grey;
+  border-radius: 10px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.h3--category_label {
+  text-align: center;
+  font-size: 32px;
+}
+
+th {
+  font-size: 24px;
+}
+
+#table--search_results {
+  position: relative;
+  width: 80%;
+  left: 200px;
+}
+
+#th--quiz {
+  width: 60%;
+  padding: 12px;
+}
+
+#th--category, #th--creator {
+  width: 20%;
+  padding: 12px;
+}
+
+.td--quiz_title,
+.td--quiz_category,
+.td--quiz_creator {
+  font-size: 24px;
+  padding: 5px;
+}
+
+.td--quiz_category,
+.td--quiz_creator {
+  text-align: center
+}

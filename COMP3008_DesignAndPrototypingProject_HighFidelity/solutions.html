@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <title>Quiz Create</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="./css/menubar.css"/>
+   <link rel="stylesheet" href="./css/solutions.css"/>
+</head>
+
+<body>	
+  <nav>
+    <div class="nav-bar-left">
+      <ul id="nav-bar">
+        <li> <a href="#" onclick="slide()"><i class="fa fa-fw fa-bars"></i> QuizCreate</a> </li>
+        <li> <a href="/search"><i class="fa fa-fw fa-search"></i> Search</a> </li>
+        <li> <a href="/create"><i class="fa fa-fw fa-plus"></i> Create Quiz</a> </li>
+        <li> <a href="/history"><i class="fa fa-fw fa-hourglass-half"></i> History</a> </li>
+        <li> <a href="/profile"><i class="fa fa-fw fa-user"></i> Account</a> </li>
+        <li> <a href="/login"><i class="fa fa-fw fa-power-off"></i> Login/Logout</a> </li>
+      <ul>
+    </div>
+  </nav>
+  <script>
+    function slide() {
+      var width1 = document.getElementById('nav-bar').offsetWidth;
+      
+      if(width1 > 100){
+        document.getElementById('nav-bar').style.width = "70px";
+      }
+      else{
+        document.getElementById('nav-bar').style.width = "230px";
+      }
+    }
+  </script>
+	
+	<main id="container">
+		<div class="title"><h2>Solutions. Grade yourself.</h2><div>
+		
+		<form>
+			<section>	
+				<fieldset>
+					<legend>Section 1: Multiple Choice</legend>
+					<table>
+						<td>
+							<p>
+								<label>1. What is the correct answer?</label>
+		
+							<p>
+								<input type="radio" id="choice_1" name="avatar" value="1" disabled>
+								<label for="choice_1">1</label>
+							</p>
+
+							<p>
+								<input type="radio" id="choice_2" name="avatar" value="2" disabled checked="true">
+								<label for="choice_2">2</label>
+							</p>	
+							
+							<p>
+								<input type="radio" id="choice_3" name="avatar" value="3" disabled>
+								<label for="choice_3">3</label>
+							</p>
+							
+							<p>	
+								<input type="radio" id="choice_4" name="avatar" value="4" disabled>
+								<label for="choice_4">4</label>					
+							</p>
+							
+							<p>
+								<label>Your score:</label>
+								<input class="sc" type="text" name="Score">
+								<label>/1</label>
+							</p>
+						</td>
+					</table>
+				</fieldset>
+			</section>	
+			
+			<section>
+				<fieldset>
+					<legend>Section 2: Short Answers</legend>
+					<table>
+						<td>
+							<p>
+								1. Describe yourself in one word?
+							</p>
+
+							<p>
+								<label>Your Answer:</label>
+								<input type="text" name="answer" class="shortI" disabled placeholder="Student">
+							</p>
+
+							<p>
+								<label>Solution:</label>
+								<input type="text" name="Solution" class="shortI" disabled placeholder="Student">
+							</p>
+
+							<p>
+								<label>Your score:</label>
+								<input class="sc" type="text" name="Score">
+								<label>/1</label>
+							</p>
+						</td>
+					</table>
+				</fieldset>
+			</section>	
+				
+			<section>	
+				<fieldset>
+					<legend>Section 3: Long Answers</legend>
+					<p>
+						1. Describe yourself in 1 paragraph?
+					</p>
+
+					<p>
+						<label>Your Answer:</label>
+						<p><textarea name="post_input" rows="6" cols="100" placeholder= "Your Answer (max 500 char)"disabled>I am a high school student.</textarea></p>
+					</p>
+
+					<p>
+						<label>Solution:</label>
+						<p><textarea name="post_input" rows="6" cols="100" placeholder= "Solution (max 500 char)" disabled>I am a student at Carleton University.</textarea></p>
+					</p>
+
+					<p>
+						<label>Your score:</label>
+						<input class="sc" type="text" name="Score">
+						<label>/10</label>
+					</p>
+				</fieldset>
+			</section>
+			
+			<input type="submit" value="Done" name="done" class="button">
+			<input type="submit" value="Save" name="save" class="button">
+    </form>
+  </main>
+</body>
+</html>

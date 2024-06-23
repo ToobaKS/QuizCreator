@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Quiz Create</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="./css/menubar.css"/>
+	<link rel="stylesheet" href="./css/checkbox.css">
+	<link rel="stylesheet" href="./css/addquest.css"/>
+</head>
+
+<body>
+	<nav>
+		<div class="nav-bar-left">
+			<ul id="nav-bar">
+				<li> <a href="#" onclick="slide()"><i class="fa fa-fw fa-bars"></i> QuizCreate</a> </li>
+				<li> <a href="/search"><i class="fa fa-fw fa-search"></i> Search</a> </li>
+				<li> <a href="/create"><i class="fa fa-fw fa-plus"></i> Create Quiz</a> </li>
+				<li> <a href="/history"><i class="fa fa-fw fa-hourglass-half"></i> History</a> </li>
+				<li> <a href="/profile"><i class="fa fa-fw fa-user"></i> Account</a> </li>
+				<li> <a href="/login"><i class="fa fa-fw fa-power-off"></i> Login/Logout</a> </li>
+			<ul>
+		</div>
+	</nav>
+	<script>
+		function slide() {
+			var width1 = document.getElementById('nav-bar').offsetWidth;
+			
+			if(width1 > 100){
+				document.getElementById('nav-bar').style.width = "70px";
+			}
+			else{
+				document.getElementById('nav-bar').style.width = "230px";
+			}
+		}
+	</script>
+	
+	
+	<div id="container">
+		<h2>Add Questions</h2>
+		<div id="container2">
+			<div id="container3">
+				<div class="start">
+					<form>
+						<div class="dropdown">
+							<button onmouseover="drp()" class="dropbtn"><i class="fa fa-caret-down"></i> Dropdown</button>
+							
+							<div id="selectopt" class="drpOpt">
+								<a href="/addMC">Section 1: Multiple Choice</a>
+								<a href="/addSA">Section 2: Short Answer</a>
+								<a href="/addLA">Section 3: Long Answer</a>
+							</div>
+						</div>
+					
+						<script>
+							function drp() {
+								document.getElementById("selectopt").classList.toggle("show");
+							}
+						</script>
+					</form>
+				</div>
+				
+				<section class = "start3">	
+					<p>
+						<input onclick="displayH()" type="submit" value="Add Question" name="Add Qeustion" class="button2">
+					</p>
+					
+					<script>
+						function displayH() {
+							var x = document.getElementById("hidd");
+							if (x.style.display === "none") {
+								x.style.display = "block";
+							} else {
+								x.style.display = "none";
+							}
+						}
+					</script>
+				</section>
+				
+				<form class="frm2">
+					<section id="hidd">	
+						<fieldset>
+							<legend>Section 3: Long Answers</legend>
+							<p>
+								<label>Your Question:</label>
+							</p>
+							<p>
+								<input type="text" name="Score" class="shortI">
+							</p>
+							<p>
+								<label>Solution:</label>
+								<p><textarea name="post_input" rows="6" cols="100" placeholder= "Solution? (max 500 char)"></textarea></p>
+							</p>
+							<p>
+								<label>Set Points:</label>
+								<input type="text" name="Score" class="sc">
+							</p>
+							<input type="submit" value="Add" name="done" class="button">
+						</fieldset>
+					</section>
+					
+					<div class="start2">
+						<input type="submit" value="Done" name="done" class="button2">
+					</div>
+					
+				</form>		
+			</div>
+		</div>
+		
+		<div id="div--checklist">
+			<label for="chk--quiz_title" class="container"> Create a quiz title 
+        <input type="checkbox" disabled="true" id="chk--quiz_title" name="chk--quiz_title" checked="true">
+        <span class="checkmark"></span>
+      </label><br>
+
+      <label for="chk--quiz_sections" class="container"> Create sections 
+        <input type="checkbox" disabled="true" id="chk--quiz_sections" name="chk--quiz_sections" checked="true">
+        <span class="checkmark"></span>
+      </label><br>
+
+      <label for="chk--question_type" class="container"> Choose question type
+        <input type="checkbox" disabled="true" id="chk--question_type" name="chk--question_type" checked="true">
+        <span class="checkmark"></span>
+      </label><br>
+
+      <label for="chk--add_question" class="container"> Add question 
+        <input type="checkbox" disabled="true" id="chk--add_question" name="chk--add_question">
+        <span class="checkmark"></span>
+      </label><br>
+
+      <label for="chk--add_solutions" class="container"> Add solutions 
+        <input type="checkbox" disabled="true" id="chk--add_solutions" name="chk--add_solutions">
+        <span class="checkmark"></span>
+      </label><br>
+		</div>
+	</main>
+</body>
+</html>

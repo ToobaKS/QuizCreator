@@ -1,0 +1,40 @@
+#submitButton {
+  display: block;
+  /* margin: 13px auto 0px 100px; */
+  padding: 10px 20px; 
+  border: none;
+  background-color: #a4492b; 
+  color: #fff; 
+  border-radius: 15px; 
+  cursor: pointer;
+}
+
+#doneButton {
+  display: block;
+  margin: 25px auto;
+  padding: 10px 20px; 
+  border: none;
+  background-color: #a4492b; 
+  color: #fff; 
+  border-radius: 15px; 
+  cursor: pointer;
+  font-size: 20px;
+}
+
+body{
+background-color: #FFFBEF;
+font-size: 20px;
+font-weight : bold;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.container2 {
+  margin: 0 auto;
+  max-width: 700px; 
+}
+
+#div--checklist {
+  position: relative;
+  left: 150px;
+}

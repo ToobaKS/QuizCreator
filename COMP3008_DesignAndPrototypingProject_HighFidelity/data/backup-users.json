@@ -1,0 +1,52 @@
+{
+  "users":{
+    "id1":{
+      "Name":"Garrison Su",
+      "Email":"GarrisonSu@cmail.carleton.ca",
+      "School":"Carleton University",
+      "DOB":"2003-07-13",
+      "Password":"GarrisonPassword",
+      "CreatedSection":[
+        "LINEAR ALGEBRA",
+        "COMPUTER SCIENCE C++",
+        "E=MC^2"
+      ],
+      "SavedQuizzes":[
+        {
+          "LINEAR ALGEBRA":"1/10"
+        },
+        {
+          "COMPUTER SCIENCE C++":"2/10"
+        },
+        {
+          "E=MC^2":"10/10"
+        }
+      ],
+      "profilePicture":"./img/profilePictures/id1.png"
+    },
+    "id2":{
+      "Name":"Merraj Masstan",
+      "Email":"MerrajMasstan@cmail.carleton.ca",
+      "School":"Carleton University",
+      "DOB":"2022",
+      "Password":"MerrajPassword",
+      "profilePicture":"./img/profilePictures/id2.png"
+    },
+    "id3":{
+      "Name":"Tooba Sheikh",
+      "Email":"ToobaSheikh@cmail.carleton.ca",
+      "School":"Carleton University",
+      "DOB":"XXXXXX XX, 1998",
+      "Password":"ToobaPassword",
+      "profilePicture":"./img/profilePictures/id3.png"
+    },
+    "merraj":{
+      "Name":"merraj",
+      "Email":"mmasstan315@gmail.com",
+      "School":"Carleton University",
+      "DOB":"2002-01-19",
+      "Password":"pass",
+      "profilePicture":"./img/profilePictures/NoPFP.png"
+    }
+  }
+}

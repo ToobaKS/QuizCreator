@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./css/menubar.css" />
+  <link rel="stylesheet" href="./css/checkbox.css">
+  <link rel="stylesheet" href="./css/addSelection.css">
+</head>
+
+<body>
+  <nav>
+    <div class="nav-bar-left">
+      <ul id="nav-bar">
+        <li> <a href="#" onclick="slide()"><i class="fa fa-fw fa-bars"></i> QuizCreate</a> </li>
+        <li> <a href="/search"><i class="fa fa-fw fa-search"></i> Search</a> </li>
+        <li> <a href="/create"><i class="fa fa-fw fa-plus"></i> Create Quiz</a> </li>
+        <li> <a href="/history"><i class="fa fa-fw fa-hourglass-half"></i> History</a> </li>
+        <li> <a href="/profile"><i class="fa fa-fw fa-user"></i> Account</a> </li>
+        <li> <a href="/login"><i class="fa fa-fw fa-power-off"></i> Login/Logout</a> </li>
+      <ul>
+    </div>
+  </nav>
+  <script>
+    function slide() {
+      var width1 = document.getElementById('nav-bar').offsetWidth;
+      
+      if(width1 > 100){
+        document.getElementById('nav-bar').style.width = "70px";
+      }
+      else{
+        document.getElementById('nav-bar').style.width = "230px";
+      }
+    }
+  </script>
+
+  <div id = "container">
+    <div class = "container2">
+      <header>
+        <h1>Add Selection</h1>
+      </header>
+
+      <div id="createdSection">      
+        <header>
+          <h1>Created Section</h1>
+        </header>
+
+        <!-- template -->
+        <fieldset id="newSectionTemplate" style="display: none;">
+          Section 2: Short Answers
+          <input type="submit" value="Edit" name="done">
+        </fieldset>
+      </div>
+
+      <main>
+        <section>
+          <fieldset>
+            <!-- https://www.youtube.com/watch?v=HMehtL39VUQ -->
+            
+            <label for="selecttitleID"> Section Title: </label>
+            <input type="text" name="seltitle" id="selecttitleID">
+            <label for="select">Choose Type:</label>
+            <select id="select">
+              <option value="default">Choose Type</option>
+            </select>
+              <script>
+                var select = document.getElementById("select"),
+                    arr = ["Multiple Choice", "Short Answer", "Long Answer"];
+                for (var i = 0; i < arr.length; i++) {
+                  var option = document.createElement("OPTION"),
+                      txt = document.createTextNode(arr[i]);
+                  option.appendChild(txt);
+                  option.setAttribute("value", arr[i]);
+                  select.insertBefore(option, select.lastChild);
+                }
+              </script>
+            <p></p>
+            <button id="submitButton">Submit</button>
+          </fieldset>
+        </section>
+        <button id="doneButton" onclick="loadAddQuestions()">Done</button>
+        <script>
+          function loadAddQuestions() {
+            window.location.href = "/addMC";
+          }
+        </script>
+      </main>
+    </div>
+
+    <div id="div--checklist">
+      <label for="chk--quiz_title" class="container"> Create a quiz title 
+        <input type="checkbox" disabled="true" id="chk--quiz_title" name="chk--quiz_title" checked="true">
+        <span class="checkmark"></span>
+      </label><br>
+
+      <label for="chk--quiz_sections" class="container"> Create sections 
+        <input type="checkbox" disabled="true" id="chk--quiz_sections" name="chk--quiz_sections">
+        <span class="checkmark"></span>
+      </label><br>
+
+      <label for="chk--question_type" class="container"> Choose question type
+        <input type="checkbox" disabled="true" id="chk--question_type" name="chk--question_type">
+        <span class="checkmark"></span>
+      </label><br>
+
+      <label for="chk--add_question" class="container"> Add question 
+        <input type="checkbox" disabled="true" id="chk--add_question" name="chk--add_question">
+        <span class="checkmark"></span>
+      </label><br>
+
+      <label for="chk--add_solutions" class="container"> Add solutions 
+        <input type="checkbox" disabled="true" id="chk--add_solutions" name="chk--add_solutions">
+        <span class="checkmark"></span>
+      </label><br>
+    </div>
+  </div>
+  <script>
+    document.getElementById('submitButton').addEventListener('click', () => {
+      // let loggedInUser = "id1" // The user that is currently logged in (to be developed)
+      if (document.getElementById('selecttitleID').value == "") {
+        alert("ERROR: Please enter a title");
+        return;
+      } else if (document.getElementById('select').value == "default") {
+        alert("ERROR: Please select a type");
+      } else{
+        alert("Section Created");
+        let template = document.getElementById('newSectionTemplate').cloneNode(true);
+        let selectTitle = document.getElementById('selecttitleID').value;
+        let selectType = document.getElementById('select').value;
+        template.setAttribute('style', "display: block;"); // Set the display
+        template.innerHTML = "Section: " + selectType + " - " + selectTitle;
+        document.getElementById('createdSection').appendChild(template);
+        document.getElementById('selecttitleID').value = "";
+      }
+    });
+  </script>
+</body>
+</html>

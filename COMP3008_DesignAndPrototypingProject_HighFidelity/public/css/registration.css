@@ -1,0 +1,55 @@
+html, body {
+  position: relative;
+  background-color: #ffefc4;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+  position: relative;
+  font-size: 72px;
+  padding: 5px;
+  text-align: center;
+}
+
+#div--registration {
+  margin: 50px;
+}
+
+table {
+  margin: auto;
+}
+
+table td {
+  min-width: 300px;
+}
+
+table label {
+  font-size: 24px;
+}
+
+table input {
+  font-size: 24px;
+  width: 600px;
+}
+
+td {
+  padding: 10px 30px;
+}
+
+#div--register_button {
+  text-align: center;
+  padding-top: 20px;
+}
+
+button {
+  background-color:  #a4492b ;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  font-weight : bold;
+  font-size: 20px;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block
+}

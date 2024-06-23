@@ -1,0 +1,100 @@
+{
+  "quizzes" : {
+    "1" : {
+      "title" : "Simple Addition",
+      "creator" : "merrajmasstan",
+      "status" : "public",
+      "category" : "Math",
+      "sections" : [
+        {
+          "title" : "Level 1",
+          "type" : "multipleChoice",
+          "questions" : [
+            {
+              "question" : "What is 1 + 1?",
+              "options" : [
+                "0", "1", "2", "3"
+              ],
+              "answer" : "2"
+            },
+            {
+              "question" : "What is 2 + 2?",
+              "options" : [
+                "2", "4", "5", "6"
+              ],
+              "answer" : "4"
+            }
+          ]
+        }
+      ]
+    },
+    "2" : {
+      "title" : "Guess the capital",
+      "creator" : "garrisonsu",
+      "status" : "public",
+      "category" : "Geography",
+      "sections" : [
+        {
+          "title" : "Our Continent",
+          "type" : "shortAnswer",
+          "questions" : [
+            {
+              "question" : "What is the capital of Canada?",
+              "answer" : "Ottawa"
+            }
+          ]
+        },
+        {
+          "title" : "Our Continent (Part 2)",
+          "type" : "longAnswer",
+          "questions" : [
+            {
+              "question" : "Explain why Ottawa is the capital.",
+              "answer" : "Because the Parliament said so."
+            }
+          ]
+        }
+      ]
+    },
+    "3" : {
+      "title" : "A Prototype Quiz",
+      "creator" : "toobasheikh",
+      "status" : "public",
+      "category" : "Computer Science",
+      "sections" : [
+        {
+          "title" : "About Myself",
+          "type" : "multipleChoice",
+          "questions" : [
+            {
+              "question" : "What is the correct answer?",
+              "options" : [
+                "1", "2", "3", "4"
+              ]
+            }
+          ]
+        },
+        {
+          "title" : "About Myself (Part 2)",
+          "type" : "shortAnswer",
+          "questions" : [
+            {
+              "question" : "Describe yourself in one word?",
+              "answer" : "Student"
+            }
+          ]
+        },
+        {
+          "title" : "About Myself (Part 3)",
+          "type" : "longAnswer",
+          "questions" : [
+            {
+              "question" : "Describe yourself in 1 paragraph?",
+              "answer" : "I am a student at Carleton University."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

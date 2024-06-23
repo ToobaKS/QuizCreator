@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Quiz Create</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../css/menubar.css"/>
+	<link rel="stylesheet" href="../css/solutions.css"/>
+</head>
+
+<body>
+  <nav>
+    <div class="nav-bar-left">
+      <ul id="nav-bar">
+        <li> <a href="#" onclick="slide()"><i class="fa fa-fw fa-bars"></i> QuizCreate</a> </li>
+        <li> <a href="/search"><i class="fa fa-fw fa-search"></i> Search</a> </li>
+        <li> <a href="/create"><i class="fa fa-fw fa-plus"></i> Create Quiz</a> </li>
+        <li> <a href="/history"><i class="fa fa-fw fa-hourglass-half"></i> History</a> </li>
+        <li> <a href="/profile"><i class="fa fa-fw fa-user"></i> Account</a> </li>
+        <li> <a href="/login"><i class="fa fa-fw fa-power-off"></i> Login/Logout</a> </li>
+      <ul>
+    </div>
+  </nav>
+  <script>
+    function slide() {
+      var width1 = document.getElementById('nav-bar').offsetWidth;
+      
+      if(width1 > 100){
+        document.getElementById('nav-bar').style.width = "70px";
+      }
+      else{
+        document.getElementById('nav-bar').style.width = "230px";
+      }
+    }
+  </script>
+	
+  <main id="container">
+		<div class="title"><h2>Quiz Title</h2><div>
+		<div id="div--sections">
+			<section>	
+				<fieldset>
+					<legend>Section 1: Multiple Choice</legend>
+					
+					<table>
+						<td>
+							<p>
+								<label>1. What is the correct answer?</label>
+							</p>
+
+							<p>
+								<input type="radio" id="choice_1" name="avatar" value="1">
+								<label for="choice_1">1</label>
+							</p>
+
+							<p>
+								<input type="radio" id="choice_2" name="avatar" value="2">
+								<label for="choice_2">2</label>
+							</p>	
+							
+							<p>
+								<input type="radio" id="choice_3" name="avatar" value="3">
+								<label for="choice_3">3</label>
+							</p>
+							
+							<p>	
+								<input type="radio" id="choice_4" name="avatar" value="4">
+								<label for="choice_4">4</label>					
+							</p>
+						</td>
+					</table>
+				</fieldset>
+			</section>	
+			
+			<section>
+				<fieldset>
+					<legend>Section 2: Short Answers</legend>
+
+					<table>
+						<td>
+							<p>
+								1. Describe yourself in one word?
+							</p>
+
+							<p>
+								<label>Your Answer:</label>
+								<input type="text" name="answer" class="shortI">
+							</p>
+						</td>
+					</table>
+				</fieldset>
+			</section>	
+				
+			<section>	
+				<fieldset>
+					<legend>Section 3: Long Answers</legend>
+          
+					<p>
+						1. Describe yourself in 1 paragraph?
+					</p>
+
+					<p>
+						<label>Your Answer:</label>
+						<p><textarea name="post_input" rows="6" cols="100" placeholder= "Your Answer (max 500 char)"></textarea></p>
+					</p>
+				</fieldset>
+			</section>
+		</div>
+
+		<div class="button-container">
+			<button class="button">Save</button>
+			<button class="button" onclick="loadSolutions()">Done</button>
+		</div>
+		<script>
+			function loadSolutions() {
+				window.location.href = "/solutions"; // Loads a solution page for a dummy quiz
+			}
+		</script>
+	</main>
+	<script>
+		let pathname = window.location.pathname.split('/');
+		let param = pathname[pathname.length - 1];
+		let xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (xhttp.readyState == 4 && xhttp.status == 200) {
+				let data = JSON.parse(this.responseText);
+				console.log(data);
+
+				let divSections = document.getElementById("div--sections");
+				divSections.innerHTML = "";
+
+				let content = ``;
+				for (let i = 0; i < data.sections.length; i++) {
+					let questionType = data.sections[i].type;
+					content += `
+					<fieldset>
+						<legend> Section ${i+1}: ${data.sections[i].title} </legend>
+						<table>
+					`
+					let questions = data.sections[i].questions;
+					for (let j = 0; j < questions.length; j++) {
+						content += `
+						<tr>
+							<p> ${j+1}. ${questions[j].question} </p>
+						`
+						let options = questions[j].options;
+						if (questionType == "multipleChoice") {
+							for (let k = 0; k < options.length; k++) {
+								content += `
+								<p>
+									<input type="radio" id="question${j}_choice_${k+1}" name="avatar" value="${k+1}">
+									<label for="question${j}_choice_${k+1}">${options[k]}</label>
+								</p>
+								`
+							}
+						} else if (questionType == "shortAnswer") {
+								content += `
+								<p>
+									<label>Your Answer:</label>
+									<input type="text" name="answer" class="shortI">
+								</p>
+								`
+						} else {
+							content += `
+							<p>
+								<label>Your Answer:</label>
+								<p><textarea name="post_input" rows="6" cols="100" placeholder= "Your Answer (max 500 char)"></textarea></p>
+							</p>
+							`
+						}
+						content += `
+						</tr>
+						`
+					}
+					content += `
+						</table>
+					</fieldset>
+					`
+				}
+				divSections.innerHTML = content;
+			}
+		}
+		xhttp.open("GET", `/quiz?id=${param}`, true);
+		xhttp.setRequestHeader("Content-Type", "application/json");
+		xhttp.send();
+	</script>
+</body>
+</html>

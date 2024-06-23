@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title> Search | QuizCreate </title>
+    <link rel="stylesheet" href="./css/search.css">
+    <link rel="stylesheet" href="./css/menubar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <nav>
+      <div class="nav-bar-left">
+        <ul id="nav-bar">
+          <li> <a href="#" onclick="slide()"><i class="fa fa-fw fa-bars"></i> QuizCreate</a> </li>
+          <li> <a href="/search"><i class="fa fa-fw fa-search"></i> Search</a> </li>
+          <li> <a href="/create"><i class="fa fa-fw fa-plus"></i> Create Quiz</a> </li>
+          <li> <a href="/history"><i class="fa fa-fw fa-hourglass-half"></i> History</a> </li>
+          <li> <a href="/profile"><i class="fa fa-fw fa-user"></i> Account</a> </li>
+          <li> <a href="/login"><i class="fa fa-fw fa-power-off"></i> Login/Logout</a> </li>
+        <ul>
+      </div>
+    </nav>
+    <script>
+      function slide() {
+        var width1 = document.getElementById('nav-bar').offsetWidth;
+        
+        if(width1 > 100){
+          document.getElementById('nav-bar').style.width = "70px";
+        }
+        else{
+          document.getElementById('nav-bar').style.width = "230px";
+        }
+      }
+    </script>
+
+    <div id="container">
+      <div id="div--search_bar">
+        <input type="text" id="input--search_quiz">
+        <button id="btn--search" onclick="runSearch()"> Search </button>
+      </div>
+  
+      <h2 id="h2--page_title"> Popular Categories </h2>
+
+      <div id="div--categories">
+        <table>
+          <tr>
+            <td class="td--category">
+              <img src="./img/icon-math.png" alt="icon-math" class="center"><br>
+              <h3 class="h3--category_label"> Math </h3>
+            </td>
+            <td class="td--category">
+              <img src="./img/icon-biology.png" alt="icon-biology" class="center"><br>
+              <h3 class="h3--category_label"> Biology </h3>
+            </td>
+            <td class="td--category">
+              <img src="./img/icon-comp-sci.png" alt="icon-comp-sci" class="center"><br>
+              <h3 class="h3--category_label"> Computer Science </h3>
+            </td>
+          </tr>
+          <tr>
+            <td class="td--category">
+              <img src="./img/icon-chemistry.png" alt="icon-chemistry" id="img--chemistry" class="center"><br>
+              <h3 class="h3--category_label"> Chemistry </h3>
+            </td>
+            <td class="td--category">
+              <img src="./img/icon-business.png" alt="icon-business" class="center"><br>
+              <h3 class="h3--category_label"> Business </h3>
+            </td>
+            <td class="td--category">
+              <img src="./img/icon-literature.png" alt="icon-literature" class="center"><br>
+              <h3 class="h3--category_label"> Literature </h3>
+            </td>
+          </tr>
+        </table>
+      </div>
+  
+      <div id="div--search_results" hidden="hidden">
+        <table id="table--search_results">
+          <tr>
+            <th id="th--quiz"> Quiz: </th>
+            <th id="th--category"> Category: </th>
+            <th id="th--creator"> Creator: </th>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <script src="./js/search.js" type="application/javascript"></script>
+  </body>
+</html>

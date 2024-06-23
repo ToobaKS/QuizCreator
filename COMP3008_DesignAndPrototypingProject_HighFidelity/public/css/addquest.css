@@ -1,0 +1,152 @@
+body{
+	background-color: #FFFBEF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+}
+
+.sc{
+	width: 20px; 
+	line-height: 20px;
+}
+
+.button {
+	float: right;
+	margin: 5px;
+	background-color: #a4492b;
+	border-radius: 20px;
+	border: none;
+	color: white;
+	font-weight : bold;
+	font-size: 20px;
+	padding: 15px 30px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+}
+
+.button2 {
+	margin: 5px;
+	background-color: #a4492b;
+	border-radius: 20px;
+	border: none;
+	color: white;
+	font-weight : bold;
+	font-size: 20px;
+	padding: 15px 30px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+}
+
+.button2:hover{
+	background-color: #D6AD60;
+	color: white;
+}
+
+
+.button:hover{
+	background-color: #D6AD60;
+	color: white;
+}
+
+
+fieldset{
+	margin: 30px;
+	border-radius: 25px;
+	padding: 20px;
+	padding-left:30px
+}
+
+legend{
+	font-size: 20px;
+	font-weight: bold;
+	
+}
+
+h2{
+	padding: 40px;
+	padding-left: 80px;
+	background-color: #FF8F6A;
+	margin: 0;
+}
+
+option{
+	line-height: 24px;
+}
+
+#hidd{
+	display: none;
+}
+
+.frm2{
+	padding-left: 30px;
+}
+
+.start{
+	padding-top:20px;
+	padding-left: 80px;
+}
+
+.start2{
+	padding-top:20px;
+	padding-left: 50px;
+}
+
+.start3{
+	padding-top:20px;
+	padding-left: 80px;
+}
+
+.shortI{
+	width: 700px; 
+	line-height: 24px;
+}
+
+.mc{ 
+	line-height: 24px;
+}
+
+/* Following the Tutorial: https://www.w3schools.com/howto/howto_js_dropdown.asp#:~:text=Example%20Explained,dropdown%20menu%20correctly%20with%20CSS. */
+.dropbtn {
+	margin: 5px;
+	background-color: #a4492b;
+	border-radius: 20px;
+	border: none;
+	color: white;
+	font-weight : bold;
+	font-size: 20px;
+	padding: 15px 30px;
+	text-align: center;
+	text-decoration: none;
+}
+
+.dropbtn:hover {
+  background-color:  #D6AD60;
+}
+
+
+.drpOpt {
+  display: none;
+  background-color: #f1f1f1;
+  width: 400px;
+  z-index: 1;
+}
+
+.drpOpt a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.drpOpt a:hover {background-color: #ddd;}
+
+.show {display:block;}
+
+.show2 {display:block;}
+
+#div--checklist {
+	margin: auto;
+}
+
+/*---------------------/*

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/menubar.css" />
+    <link rel="stylesheet" type="text/css" href="./css/profile.css">
+</head>
+
+<body>
+  <nav>
+    <div class="nav-bar-left">
+      <ul id="nav-bar">
+        <li> <a href="#" onclick="slide()"><i class="fa fa-fw fa-bars"></i> QuizCreate</a> </li>
+        <li> <a href="/search"><i class="fa fa-fw fa-search"></i> Search</a> </li>
+        <li> <a href="/create"><i class="fa fa-fw fa-plus"></i> Create Quiz</a> </li>
+        <li> <a href="/history"><i class="fa fa-fw fa-hourglass-half"></i> History</a> </li>
+        <li> <a href="/profile"><i class="fa fa-fw fa-user"></i> Account</a> </li>
+        <li> <a href="/login"><i class="fa fa-fw fa-power-off"></i> Login/Logout</a> </li>
+      <ul>
+    </div>
+  </nav>
+  <script>
+    function slide() {
+      var width1 = document.getElementById('nav-bar').offsetWidth;
+      
+      if(width1 > 100){
+        document.getElementById('nav-bar').style.width = "70px";
+      }
+      else{
+        document.getElementById('nav-bar').style.width = "230px";
+      }
+    }
+  </script>
+
+  <div class="container">
+    <div class="avatar">
+      <div class="avatar-image">
+        <img src="./img/profilePictures/id1.png" alt="Avatar" style="width:200px" id="img--pfp">
+      </div>
+      <button id="changePFP">Change Profile Picture</button>
+    </div>
+    <table>
+      <tr>
+        <td>Name:</td>
+        <td class="DataDisplay"><span id="nameDisplay"></span></td>
+        <td><button id="editName">Edit</button></td>
+      </tr>
+
+      <tr>
+        <td>Email:</td>
+        <td class="DataDisplay"><span id="emailDisplay"></span></td>
+        <td><button id="editEmail">Edit</button></td>
+      </tr>
+
+      <tr>
+        <td>School:</td>
+        <td class="DataDisplay"><span id="schoolDisplay"></span></td>
+        <td><button id="editSchool">Edit</button></td>
+      </tr>
+
+      <tr>
+        <td>Date of Birth:</td>
+        <td class="DataDisplay"><span id="dobDisplay"></span></td>
+        <td><button id="editDOB">Edit</button></td>
+      </tr>
+
+      <tr>
+        <td>Password:</td>
+        <td class="DataDisplay"><span id="passwordDisplay"></span></td>
+        <td><button id="editPassword">Edit</button></td>
+      </tr>
+    </table>
+  </div>
+
+  <script>  
+    // console.log(window.location.search.substring(1).split("=")[1]);
+    let query = window.location.search.substring(1).split("=")[1];
+    if (query === undefined) {
+      query = "id1";
+    }
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (xhttp.readyState == 4 && xhttp.status == 200) {
+        let data = JSON.parse(this.responseText);
+        document.getElementById("nameDisplay").innerHTML = data.Name;
+        document.getElementById("emailDisplay").innerHTML = data.Email;
+        document.getElementById("schoolDisplay").innerHTML = data.School;
+        document.getElementById("dobDisplay").innerHTML = data.DOB;
+        document.getElementById("passwordDisplay").innerHTML = data.Password;
+        document.getElementById("img--pfp").src = data.profilePicture;
+      }
+    }
+    xhttp.open("GET", `/user?username=${query}`, true);
+    xhttp.setRequestHeader("Content-Type", "application/javascript");
+    xhttp.send();
+  </script>
+
+  <!-- Popup Boxes for Editing Sections -->
+  <div id="editNamePopup" class="edit-popup-box">
+    <h2>Edit Name</h2>
+    <input type="text" id="editNameInput" placeholder="New Name"><br>
+    <input type="password" id="editNamePasswordInput" placeholder="Your Password"><br>
+    <button id="saveName">Save</button>
+    <button id="cancelName">Cancel</button>
+  </div>
+
+  <div id="editEmailPopup" class="edit-popup-box">
+    <h2>Edit Email</h2>
+    <input type="email" id="editEmailInput" placeholder="New Email"><br>
+    <input type="password" id="editEmailPasswordInput" placeholder="Your Password"><br>
+    <button id="saveEmail">Save</button>
+    <button id="cancelEmail">Cancel</button>
+  </div>
+
+  <div id="editSchoolPopup" class="edit-popup-box">
+    <h2>Edit School</h2>
+    <input type="text" id="editSchoolInput" placeholder="New School"><br>
+    <input type="password" id="editSchoolPasswordInput" placeholder="Your Password"><br>
+    <button id="saveSchool">Save</button>
+    <button id="cancelSchool">Cancel</button>
+  </div>
+
+  <div id="editDobPopup" class="edit-popup-box">
+    <h2>Edit Date of Birth</h2>
+    <input type="date" id="editDOBInput"><br>
+    <input type="password" id="editDOBPasswordInput" placeholder="Your Password"><br>
+    <button id="saveDOB">Save</button>
+    <button id="cancelDOB">Cancel</button>
+  </div>
+
+  <div id="editPasswordPopup" class="edit-popup-box">
+    <h2>Edit Password</h2>
+    <input type="password" id="editPasswordInput" placeholder="New Password"><br>
+    <input type="password" id="editPasswordCurrentInput" placeholder="Current Password"><br>
+    <button id="savePassword">Save</button>
+    <button id="cancelPassword">Cancel</button>
+  </div>
+  <script src="./js/profile.js" type="application/javascript"></script>
+</body>
+</html>

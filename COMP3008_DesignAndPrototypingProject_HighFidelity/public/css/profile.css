@@ -1,0 +1,78 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFBEF;
+}
+
+h2{
+	padding: 40px;
+	padding-left: 80px;
+	background-color: #FF8F6A;
+	margin: 0;
+}
+
+.DataDisplay{
+  width: 100px;
+  max-width: 100px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; 
+}
+
+.avatar {
+  text-align: center;
+  border-right: 1px solid black;
+  padding-right: 20px;
+  margin: 20px; /* From line to text */
+}
+
+.avatar-image {
+
+  display: block;
+  margin: 10px auto;
+  padding: 7px 7px; 
+  background-color: #000000; 
+  color: #fff; 
+  border-radius: 15px; 
+  cursor: pointer;
+}
+
+.avatar button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px; 
+  border: none;
+  background-color: #007BFF; 
+  color: #fff; 
+  border-radius: 15px; 
+  cursor: pointer;
+
+}
+
+#editName, #editEmail, #editSchool, #editDOB, #editPassword {
+  display: block;
+  margin: 13px auto 0px 100px;
+  padding: 10px 20px; 
+  border: none;
+  background-color: #a4492b; 
+  color: #fff; 
+  border-radius: 15px; 
+  cursor: pointer;
+}
+
+.edit-popup-box {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  text-align: center;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title> Create a Quiz | QuizCreate </title>
+  <link rel="stylesheet" href="./css/createQuiz.css">
+  <link rel="stylesheet" href="./css/menubar.css">
+  <link rel="stylesheet" href="./css/checkbox.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <nav>
+    <div class="nav-bar-left">
+      <ul id="nav-bar">
+        <li> <a href="#" onclick="slide()"><i class="fa fa-fw fa-bars"></i> QuizCreate</a> </li>
+        <li> <a href="/search"><i class="fa fa-fw fa-search"></i> Search</a> </li>
+        <li> <a href="/create"><i class="fa fa-fw fa-plus"></i> Create Quiz</a> </li>
+        <li> <a href="/history"><i class="fa fa-fw fa-hourglass-half"></i> History</a> </li>
+        <li> <a href="/profile"><i class="fa fa-fw fa-user"></i> Account</a> </li>
+        <li> <a href="/login"><i class="fa fa-fw fa-power-off"></i> Login/Logout</a> </li>
+      <ul>
+    </div>
+  </nav>
+  <script>
+    function slide() {
+      var width1 = document.getElementById('nav-bar').offsetWidth;
+      
+      if(width1 > 100){
+        document.getElementById('nav-bar').style.width = "70px";
+      }
+      else{
+        document.getElementById('nav-bar').style.width = "230px";
+      }
+    }
+  </script>
+
+  <div id="container">
+    <h2> Quiz Creation Check List </h2>
+
+    <div id="div--checklist">
+      <label for="chk--quiz_title" class="container"> Create a quiz title 
+        <input type="checkbox" disabled="true" id="chk--quiz_title" name="chk--quiz_title">
+        <span class="checkmark"></span>
+      </label><br>
+
+      <label for="chk--quiz_sections" class="container"> Create sections 
+        <input type="checkbox" disabled="true" id="chk--quiz_sections" name="chk--quiz_sections">
+        <span class="checkmark"></span>
+      </label><br>
+
+      <label for="chk--question_type" class="container"> Choose question type
+        <input type="checkbox" disabled="true" id="chk--question_type" name="chk--question_type">
+        <span class="checkmark"></span>
+      </label><br>
+
+      <label for="chk--add_question" class="container"> Add question 
+        <input type="checkbox" disabled="true" id="chk--add_question" name="chk--add_question">
+        <span class="checkmark"></span>
+      </label><br>
+
+      <label for="chk--add_solutions" class="container"> Add solutions 
+        <input type="checkbox" disabled="true" id="chk--add_solutions" name="chk--add_solutions">
+        <span class="checkmark"></span>
+      </label><br>
+    </div>
+
+    <div id="div--quiz_title">
+      <label for="input--quiz_title" id="lbl--quiz_title"> Quiz Title: </label>
+      <input type="text" name="quiz_title" id="input--quiz_title" name="input--quiz_title"><br>
+      <button id="btn--create_quiz" onclick="loadAddSections()"> Create </button>
+    </div>
+  </div>
+  <script>
+    function loadAddSections() {
+      window.location.href = "/addSections";
+    }
+  </script>
+</body>
+</html>

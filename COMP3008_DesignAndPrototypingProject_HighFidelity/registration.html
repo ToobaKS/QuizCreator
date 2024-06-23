@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> Registration | QuizCreate </title>
+  <link rel="stylesheet" href="./css/menubar.css">
+  <link rel="stylesheet" href="./css/registration.css">
+</head>
+
+<body>
+  <div id="div--registration">
+    <h2> Registration </h2>
+
+    <table>
+      <tr>
+        <td><label for="fullname"> Name: </label></td>
+        <td><input type="text" name="fullname" id="fullname"></td>
+      </tr>
+      <tr>
+        <td><label for="username"> Username: </label></td>
+        <td><input type="text" name="username" id="username"></td>
+      </tr>
+      <tr>
+        <td><label for="password"> Password: </label></td>
+        <td><input type="password" name="password" id="password"><br></td>
+      </tr>
+      <tr>
+        <td><label for="confirm_password"> Confirm Password: </label></td>
+        <td><input type="password" name="confirm_password" id="confirm_password"></td>
+      </tr>
+      <tr>
+        <td><label for="email"> Email: </label></td>
+        <td><input type="email" name="email" id="email"></td>
+      </tr>
+      <tr>
+        <td><label for="confirm_email"> Confirm Email: </label></td>
+        <td><input type="email" name="confirm_email" id="confirm_email"><br></td>
+      </tr>
+      <tr>
+        <td><label for="dob"> Date of birth (YYYY-MM-DD): </label></td>
+        <td><input type="text" name="dob" id="dob"><br></td>
+      </tr>
+    </table>
+
+    <div id="div--register_button">
+      <button onclick="registerUser()"> Register </button>
+    </div>
+  </div>
+  <script src="./js/register-user.js" type="application/javascript"></script>
+</body>
+</html>

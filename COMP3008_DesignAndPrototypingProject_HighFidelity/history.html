@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <title> History | Quiz Create </title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="./css/menubar.css"/>
+   <link rel="stylesheet" href="./css/history.css"/>
+</head>
+
+<body>	
+  <nav>
+    <div class="nav-bar-left">
+      <ul id="nav-bar">
+        <li> <a href="#" onclick="slide()"><i class="fa fa-fw fa-bars"></i> QuizCreate</a> </li>
+        <li> <a href="/search"><i class="fa fa-fw fa-search"></i> Search</a> </li>
+        <li> <a href="/create"><i class="fa fa-fw fa-plus"></i> Create Quiz</a> </li>
+        <li> <a href="/history"><i class="fa fa-fw fa-hourglass-half"></i> History</a> </li>
+        <li> <a href="/profile"><i class="fa fa-fw fa-user"></i> Account</a> </li>
+        <li> <a href="/login"><i class="fa fa-fw fa-power-off"></i> Login/Logout</a> </li>
+      <ul>
+    </div>
+  </nav>
+  <script>
+    function slide() {
+      var width1 = document.getElementById('nav-bar').offsetWidth;
+      
+      if(width1 > 100){
+        document.getElementById('nav-bar').style.width = "70px";
+      }
+      else{
+        document.getElementById('nav-bar').style.width = "230px";
+      }
+    }
+  </script>
+	
+	<main id="container">
+    <h2> History </h2>
+    <div class="flex-buttons">
+      <button class="button" onclick="renderSaved()"> Saved quizzes </button>
+      <button class="button" onclick="renderCreated()"> Created quizzes </button>
+    </div>
+    <section id="savedQuizzes">	
+      <h4> Saved Quizzes </h4>
+      <ul>
+        <li>
+          <a href="#">Quiz 1<input type="submit" value="remove" name="remove" class="button"></a>  
+        </li>
+
+        <li>
+          <a href="#">Quiz 2<input type="submit" value="remove" name="done"  class="button"></a>  
+        </li>
+
+        <li>
+          <a href="#">Quiz 3<input type="submit" value="remove" name="remove"  class="button"></a>
+        </li>
+      </ul>
+    </section>
+    <section id="createdQuizzes" hidden="hidden">
+      <h4> Created Quizzes </h4>
+      <ul>
+        <li>
+          <a href="#"> COMP 3008 - Human-Computer Interaction (Test 1 Practice)
+            <button class="button"> Edit </button>
+            <button class="button"> Remove </button>
+          </a>  
+        </li>
+
+        <li>
+          <a href="#"> SYSC 4504 - Introduction to Web Development 
+            <button class="button"> Edit </button>
+            <button class="button"> Remove </button>
+          </a>  
+        </li>
+
+        <li>
+          <a href="#"> COMP 3008 - Human-Computer Interaction (Test 2 Practice)
+            <button class="button"> Edit </button>
+            <button class="button"> Remove </button>
+          </a>  
+        </li>
+      </ul>
+    </section>
+  </main>
+  <script>
+    function renderSaved() {
+      document.getElementById("createdQuizzes").hidden = true;
+      document.getElementById("savedQuizzes").hidden = false;
+    }
+
+    function renderCreated() {
+      document.getElementById("createdQuizzes").hidden = false;
+      document.getElementById("savedQuizzes").hidden = true;
+    }
+  </script>
+</body>
+</html>
